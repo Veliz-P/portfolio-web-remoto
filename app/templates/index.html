@@ -36,32 +36,45 @@
     
 </head>
 <body>
-    <nav class="navbar mb-3" style="background-color: #CCC5B9;">
-        <div class="navbar-brand"><a href="#"><b>PORTFOLIO</b></a></div>
-        <ul class="nav-links">
-            <li class="nav-item"><a class="nav-link" href="#">Habilidades</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Acerca</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navbar mb-3" style="background-color: #CCC5B9;">
+            <div class="navbar-brand"><a href="#"><b>PORTFOLIO</b></a></div>
+            <ul class="nav-links">
+                <li class="nav-item"><a class="nav-link" href="#">Habilidades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Acerca</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="container mt-5">
-        <div class="row justify-content-between">
-            <div class="col-5">
-                <h1 style="font-weight: bold;">¡Hola! Soy Carlos <br>Paucar</h1>
-                <p>Soy un desarrollador de software apasionado por la informática y las soluciones tecnológicas,
-                    tengo experiencia en el desarrollo de aplicaciones de escritorio y sitios web por lo que
-                    si buscas a alguien comprometido con la calidad y
-                    el buen desarrollo, ¡contáctame!</p>
-                <button class="btn btn-info">Habilidades</button>
-                <button class="btn btn-info ml-3">Proyectos</button>
+        <main>
+            <div class="row justify-content-between">
+                <div class="col-5">
+                    <h1 style="font-weight: bold;">¡Hola! Soy Carlos <br>Paucar</h1>
+                    <p>Soy un desarrollador de software apasionado por la informática y las soluciones tecnológicas,
+                        tengo experiencia en el desarrollo de aplicaciones de escritorio y sitios web por lo que
+                        si buscas a alguien comprometido con la calidad y
+                        el buen desarrollo, ¡contáctame!</p>
+                    <button class="btn btn-info">Habilidades</button>
+                    <button class="btn btn-info ml-3">Proyectos</button>
+                </div>
+                <div class="col-6">
+                    <img class="img-fluid rounded mx-auto d-block" 
+                        src="{% static 'app/img/img_user_example.jpg'%}" width="300" height="200" alt="">
+                </div>
             </div>
-            <div class="col-6">
-                <img class="img-fluid rounded mx-auto d-block" 
-                    src="{% static 'app/img/img_user_example.jpg'%}" width="300" height="200" alt="">
-            </div>
-        </div>
+        </main>
+
+        <section>
+
+        </section>
+
+        <footer>
+            
+        </footer>
     </div>
+
 </body>
 </html>
