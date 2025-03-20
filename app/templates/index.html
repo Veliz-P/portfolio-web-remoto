@@ -10,6 +10,8 @@
     <!--<link rel="stylesheet" href="{% static 'app/css/index_styles.css' %}"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 
     <style>
         body {
@@ -37,7 +39,8 @@
         .nav-links a:hover,
         a:hover {
             font-weight: bold;
-            color: #964E31;
+            text-decoration: none;
+            color: lightgreen;
         }
 
         .btn {
@@ -45,115 +48,139 @@
         }
 
         .habilidades-contacto .row {
-            background-color: #4874B5;
+            background-color: transparent   ;
             padding: 10px;
             border-radius: 5px
         }
 
-        .img-carousel {
-            width: 100%; 
-            height: 250px; /* Ajusta según necesites */ 
-            object-fit: contain; /* Mantiene proporción sin cortar */
+        .habilidades-contacto {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 400px; /* Ajusta el tamaño máximo del carrusel */
+
+        .habilidades-contacto.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
+
+        footer {
+            background-color: #1A447A;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+        
+        
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar mb-3" style="background-color: #1A447A;">
-            <div class="navbar-brand"><a href="#"><b>PORTFOLIO</b></a></div>
-            <ul class="nav-links">
-                <li class="nav-item"><a class="nav-link" href="#">Habilidades</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Acerca</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1A447A;">
+            <a class="navbar-brand fw-bold" href="#">PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto nav-links">
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Acerca</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <div class="container mt-5">
-        <div class="row mt-5"></div>
-        <div class="row mt-4"></div>
-        <main>
-            <div class="row justify-content-between">
+    <div class="container-fluid mt-5">
+        <main class="d-flex align-items-center justify-content-center min-vh-100">
+            <div class="row justify-content-center align-items-center text-center text-md-left">
                 <div class="col-md-5">
-                    <h1 style="font-weight: bold;">¡Hola! Soy Carlos <br>Paucar</h1><br>
+                    <img class="img-fluid rounded mx-auto d-block" src="{% static 'app/img/img_user_example.jpg' %}"
+                        width="300" height="200" alt="" style="padding: 3%px;">
+                </div>
+                <div class="col-md-5 order-md-first">
+                    <h1 class="fw-bold">¡Hola! Soy Carlos <br>Paucar</h1><br>
                     <p>Soy un desarrollador de software apasionado por la informática y las soluciones tecnológicas,
                         tengo experiencia en el desarrollo de aplicaciones de escritorio y sitios web por lo que
                         si buscas a alguien comprometido con la calidad y
                         el buen desarrollo, ¡contáctame!</p>
-                    <button class="btn btn-info mt-3">Habilidades</button>
                     <button class="btn btn-info mt-3 ml-3">Proyectos</button>
-                </div>
-                <div class="col-md-6">
-                    <img class="img-fluid rounded mx-auto d-block" src="{% static 'app/img/img_user_example.jpg'%}"
-                        width="300" height="200" alt="">
                 </div>
             </div>
         </main>
-
-        <div class="row mt-5"></div>
-        <div class="row mt-5"></div>
-        <div class="row mt-5"></div>
+        
+        
         <section class="habilidades-contacto">
-            <div class="row mt-5 justify-content-around">
+            <div class="row mt-5 justify-content-center">
                 <!-- Habilidades -->
-                <div class="col-6 d-flex flex-column align-items-center">
+                <div class="col-12 col-md-5 d-flex flex-column align-items-center mt-4" id="habilidades" 
+                    style="background-color: #015BA0; padding:1%">
                     <h4 class="fw-bold text-center">Habilidades</h4>
-                    <div id="carouselFade" class="carousel slide carousel-fade mt-3" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block img-carousel" src="{% static 'app/img/java_logo_img.png' %}" alt="Java slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-carousel" src="{% static 'app/img/python_logo_img.png' %}" alt="Python slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-carousel" src="{% static 'app/img/mysql_logo_img.png' %}" alt="MySQL slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-carousel" src="{% static 'app/img/git_logo_img.png' %}" alt="Git slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-carousel" src="{% static 'app/img/django_logo_img.png' %}" alt="Django slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-carousel" src="{% static 'app/img/bootstrap_logo_img.png' %}" alt="Bootstrap slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-carousel" src="{% static 'app/img/xp_metodologia_img.jpg' %}" alt="XP slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-carousel" src="{% static 'app/img/scrum_metodologia_logo.png' %}" alt="Scrum slide">
-                            </div>
+                    <!--<img class="d-block" src="{% static 'app/img/xp_metodologia_img.jpg' %}"-->
+                    <div class="row">
+                        <div class="col">
+                            <b>Lenguajes de programación</b>
+                            <ul class="mt-3">
+                                <li>Python</li>
+                                <li>Java</li>
+                                <li>C#</li>
+                            </ul>
+
                         </div>
-                        <a class="carousel-control-prev" href="#carouselFade" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselFade" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div class="col">
+                            <b>Frameworks</b>
+                            <ul class="mt-3">
+                                <li>Django</li>
+                                <li>Bootstrap</li>
+                                <li>Vue js</li>
+                                <li>EF Core</li>
+                                <li>.NET</li>
+                            </ul>
+
+                        </div>
+                        <div class="col">
+                            <b>Metodologías</b>
+                            <ul class="mt-3">
+                                <li>XP (Extreme Programming)</li>
+                                <li>SCRUM</li>
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
-                
+                <div class="col-1"></div>
                 <!-- Contacto -->
-                <div class="col-6 d-flex flex-column align-items-center">
+                <div class="col-12 col-md-5 d-flex flex-column align-items-center mt-4"
+                    style="background-color: #015BA0; padding:1%;">
                     <h4 class="fw-bold text-center">Contacto</h4>
+                    <ul class="mt-3 ml-4 list-unstyled">
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-telephone-fill mr-3" style="font-size: 2rem;"></i>
+                            <a href="tel:+593987272340">+593 98 727 2340</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill mr-3" style="font-size: 2rem;"></i>
+                            <a href="mailto:paucarcarlos2108@gmail.com">paucarcarlos2108@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-github mr-3" style="font-size: 2rem;"></i>
+                            <a href="https://github.com/Veliz-P" target="_blank">Veliz-P</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <div class="row mt-5"></div>
         <footer>
-
+            <footer>
+                <p>© 2024 Carlos Paucar Veliz - Todos los derechos reservados</p>
+            </footer>            
         </footer>
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -163,6 +190,22 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target); // Dejar de observar una vez activado
+                        }
+                    });
+                }, { threshold: 0.6 }); // Se activa cuando el 50% del elemento es visible
+
+                let habilidadesContacto = document.querySelector(".habilidades-contacto");
+                observer.observe(habilidadesContacto);
+            });
+        </script>
+
     </div>
 
 </body>
