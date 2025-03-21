@@ -18,13 +18,19 @@
             background-color: #042F6B;
             color: #DBE4EE;
         }
+
         .nav-links li {
             margin-right: 1%;
         }
-        .nav-links a,
+
         a {
             color: #DBE4EE;
             font-weight: 500;
+        }
+
+        a:hover {
+            color: lightgreen;
+            text-decoration: none;
         }
 
         .habilidades-contacto {
@@ -45,6 +51,10 @@
             margin-top: 20px;
             color: white;
         }
+
+        .card{
+            color: black;
+        }
     </style>
 </head>
 
@@ -59,7 +69,7 @@
                 <ul class="navbar-nav ml-auto nav-links">
                     <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Acerca</a></li>
                 </ul>
             </div>
@@ -70,8 +80,8 @@
         <main class="d-flex align-items-center justify-content-center min-vh-100">
             <div class="row justify-content-center align-items-center text-center text-md-left">
                 <div class="col-md-5">
-                    <img class="img-fluid rounded mx-auto d-block" src="{% static 'app/img/img_user_example.jpg' %}"
-                        width="300" height="200" alt="" style="padding: 3%px;">
+                    <img class="img-fluid mx-auto d-block" src="{% static 'app/img/img_user_example.jpg' %}" width="300"
+                        height="200" alt="" style="padding: 3%; border-radius:40px">
                 </div>
                 <div class="col-md-5 order-md-first">
                     <h1 class="fw-bold">¡Hola! Soy Carlos <br>Paucar</h1><br>
@@ -79,54 +89,58 @@
                         tengo experiencia en el desarrollo de aplicaciones de escritorio y sitios web por lo que
                         si buscas a alguien comprometido con la calidad y
                         el buen desarrollo, ¡contáctame!</p>
-                    <button class="btn btn-info mt-3" style="font-weight: 500;">Proyectos</button>
+                    <button class="btn btn-info mt-3" style="font-weight: 500;"><a href="#proyectos">Proyectos</a></button>
                 </div>
             </div>
         </main>
-        
-        
+
         <section class="habilidades-contacto">
-            <div class="row mt-5 justify-content-center">
+            <div class="row mt-5 justify-content-center align-items-center">
                 <!-- Habilidades -->
-                <div class="col-12 col-md-5 d-flex flex-column align-items-center mt-4" id="habilidades" 
-                    style="background-color: #015BA0; padding:1%">
+                <div class="col-10 col-md-6 d-flex flex-column align-items-center mt-4"
+                    style="background-color: #3F6FA5;; padding:1%; border-radius:5px">
                     <h4 class="fw-bold text-center">Habilidades</h4>
                     <!--<img class="d-block" src="{% static 'app/img/xp_metodologia_img.jpg' %}"-->
                     <div class="row">
-                        <div class="col">
-                            <b>Lenguajes de programación</b>
-                            <ul class="mt-3">
-                                <li>Python</li>
+                        <div class="col-6 col-md-3 mt-3 d-flex flex-column">
+                            <b class="text-center">Lenguajes de programación</b>
+                            <ul>
+                                <li class="mt-3">Python</li>
                                 <li>Java</li>
                                 <li>C#</li>
                             </ul>
-
                         </div>
-                        <div class="col">
-                            <b>Frameworks</b>
-                            <ul class="mt-3">
-                                <li>Django</li>
+                        <div class="col-6 col-md-3 mt-3 d-flex flex-column">
+                            <b class="text-center">Frameworks</b>
+                            <ul>
+                                <li class="mt-3">Django</li>
                                 <li>Bootstrap</li>
                                 <li>Vue js</li>
                                 <li>EF Core</li>
                                 <li>.NET</li>
                             </ul>
-
                         </div>
-                        <div class="col">
-                            <b>Metodologías</b>
-                            <ul class="mt-3">
-                                <li>XP (Extreme Programming)</li>
+                        <div class="col-6 col-md-3 mt-3 d-flex flex-column">
+                            <b class="text-center">Metodologías</b>
+                            <ul>
+                                <li class="mt-3">XP (Extreme Programming)</li>
                                 <li>SCRUM</li>
                             </ul>
-
+                        </div>
+                        <div class="col-6 col-md-3 mt-3 d-flex flex-column">
+                            <b class="text-center">Bases de datos</b>
+                            <ul>
+                                <li class="mt-3">SQL Server</li>
+                                <li>MySQL</li>
+                                <li>Mongo DB</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-1"></div>
+                <div class="col-12 col-md-1"></div>
                 <!-- Contacto -->
-                <div class="col-12 col-md-5 d-flex flex-column align-items-center mt-4"
-                    style="background-color: #015BA0; padding:1%;">
+                <div class="col-10 col-md-4 d-flex flex-column align-items-center mt-4"
+                    style="background-color: #3F6FA5;; padding:1%; border-radius:5px">
                     <h4 class="fw-bold text-center">Contacto</h4>
                     <ul class="mt-3 ml-4 list-unstyled">
                         <li class="d-flex align-items-center">
@@ -146,11 +160,28 @@
             </div>
         </section>
 
+        <section class="" id="proyectos">
+            <div class="row mt-5 justify-content-center align-items-center mx-auto">
+                <div class="col-10 col-md-10 d-flex flex-column align-items-center" style="padding: 1%; background-color: #3F6FA5; border-radius:5px">
+                    <h4 class="text-center">Proyectos</h4>
+                    <div class="card mt-3" style="width: 18rem; background-color:#DAF5FB">
+                        <img class="card-img-top" src="" alt="Card image cap" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">CAVAMYM APP</h5>
+                            <p class="card-text">Programa orientado a la gestión de datos del laboratorio de cosméticos y artículos de cuidado
+                                personal CAVAMYM S.A.S.</p>
+                            <a href="#" class="btn btn-info">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="row mt-5"></div>
         <footer>
             <footer>
                 <p>© 2024 Carlos Paucar Veliz - Todos los derechos reservados</p>
-            </footer>            
+            </footer>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
