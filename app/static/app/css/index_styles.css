@@ -3,32 +3,26 @@ body {
     color: #DBE4EE;
     font-family: 'Poppins','SEGOE UI', 'LUCIDA SANS';
 }
-
 .nav-links li {
     margin-right: 1%;
 }
-
 a {
     color: #DBE4EE;
     font-weight: 500;
 }
-
 a:hover {
     color: lightgreen;
     text-decoration: none;
 }
-
 .habilidades-contacto {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .habilidades-contacto.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
 footer {
     background-color: #1A447A;
     padding: 10px;
@@ -36,7 +30,6 @@ footer {
     margin-top: 20px;
     color: white;
 }
-
 #habilidades ul li{
     text-align: center;
     background-color: #80CBC4;
