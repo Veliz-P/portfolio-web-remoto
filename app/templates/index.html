@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+<html lang="en" class="h-100"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,6 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="{% static 'app/css/index_styles.css' %}"> -->
-
     <style>
         body {
             background-color: #2B2E4A;
@@ -39,7 +38,7 @@
             transform: translateY(0);
         }
         footer {
-            background-color: #1A447A;
+            background-color: #2D4059;
             padding: 10px;
             text-align: center;
             margin-top: 20px;
@@ -53,13 +52,6 @@
             padding: 10px 20px;
             margin: 10px 0;
             border-radius: 20px;
-        }
-        #proyectos .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #proyectos .card:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px rgb(154, 154, 255);/* Sombra para darle más énfasis */
         }
         /* Para pantallas pequeñas (dispositivos móviles) */
         @media (max-width: 576px) {
@@ -76,6 +68,13 @@
                 font-size: 1.1rem;
             }
         }
+        #proyectos .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #proyectos .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px rgb(154, 154, 255);/* Sombra para darle más énfasis */
+        }
         #habilidades, #contacto{
             background-color: #355C7D; padding: 1%; 
             border-radius: 5px;
@@ -85,6 +84,23 @@
             padding: 3%; 
             border-radius: 40px;
         }
+        .dynamic-list .icon {
+            display: none;
+            padding: 3%;
+        }
+        .dynamic-list .txt:hover {
+            display: none;
+        }
+        .dynamic-list .txt:hover + .icon {
+            display: inline; 
+        }
+        .dynamic-list img {
+            width: 70%;
+        }
+        .dynamic-list li{
+            cursor:text;
+        }
+        
     </style>
 </head>
 
@@ -130,16 +146,28 @@
                     <div class="row justify-content-center">
                         <div class="col-5 col-md-3 mt-3">
                             <b class="text-center">Lenguajes de programación</b>
-                            <ul class="list-unstyled">
-                                <li class="mt-3">Python</li>
-                                <li>Java</li>
-                                <li>C#</li>
+                            <ul class="list-unstyled dynamic-list">
+                                <li class="mt-3">
+                                    <span class="txt">Python</span>
+                                    <span class="icon"><img class="img-fluid" src="{% static 'app/img/python_icon.ico'%}"></span>
+                                </li>
+                                <li>
+                                    <span class="txt">Java</span>
+                                    <span class="icon"><img class="img-fluid" src="{% static 'app/img/java_icon.ico'%}"></span>
+                                </li>
+                                <li>
+                                    <span class="txt">C#</span>
+                                    <span class="icon"><img class="img-fluid" src="{% static 'app/img/c_sharp_icon.ico'%}"></span>
+                                </li>
                             </ul>
+                            
                         </div>
                         <div class="col-5 col-md-3 mt-3">
                             <b class="text-center">Frameworks</b>
-                            <ul class="list-unstyled">
-                                <li class="mt-3">Bootstrap</li>
+                            <ul class="list-unstyled dynamic-list">
+                                <li class="mt-3">
+                                    <span>Bootstrap</span>
+                                </li>
                                 <li>Vue.js</li>
                                 <li>EF Core</li>
                                 <li>.NET - WPF</li>
@@ -184,12 +212,12 @@
             </div>
         </section>
 
-        <section id="proyectos">
+        <section id="proyectos" style="margin-bottom: 10vh;">
             <div class="row mt-5 justify-content-center">
                 <div class="col-10 col-md-10 d-flex flex-column align-items-center">
                     <h4 class="text-center mt-3">Proyectos</h4>
                     <div class="card mt-4" style="width: 18rem; background-color: #427D9D; color: #F0F0F0;">
-                        <img class="card-img-top" src="{% static 'app/img/cavamym_logo.jpg' %}" alt="CAVAMYM APP"
+                        <img class="card-img-top" src="{% static 'app/img/cavamym_logo.jpg' %}" alt="CAVAMYM APP" 
                             loading="lazy" style="width: 100%; height: 50%;">
                         <div class="card-body">
                             <h5 class="card-title">CAVAMYM APP</h5>
@@ -199,9 +227,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
+        
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
