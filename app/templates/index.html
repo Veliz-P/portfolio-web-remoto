@@ -1,7 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en" class="h-100"></html>
+<html lang="en" class="h-100">
+
+</html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,26 +20,32 @@
             font-family: 'Poppins', 'SEGOE UI', 'LUCIDA SANS';
             font-size: 1rem;
         }
+
         .nav-links li {
             margin-right: 1%;
         }
+
         a {
             color: #DBE4EE;
             font-weight: 500;
         }
+
         a:hover {
             color: lightgreen;
             text-decoration: none;
         }
+
         .habilidades-contacto {
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
         .habilidades-contacto.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         footer {
             background-color: #2D4059;
             padding: 10px;
@@ -44,6 +53,7 @@
             margin-top: 20px;
             color: white;
         }
+
         #habilidades ul li {
             text-align: center;
             background-color: #80CBC4;
@@ -53,54 +63,68 @@
             margin: 10px 0;
             border-radius: 20px;
         }
+
         /* Para pantallas pequeñas (dispositivos móviles) */
         @media (max-width: 576px) {
             body {
                 font-size: 0.9rem;
             }
-            main img{
+
+            main img {
                 width: 60%;
             }
         }
+
         /* Para pantallas medianas (tabletas) */
         @media (min-width: 576px) and (max-width: 992px) {
             body {
                 font-size: 1.1rem;
             }
         }
+
         #proyectos .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         #proyectos .card:hover {
             transform: scale(1.1);
-            box-shadow: 0px 0px 20px rgb(154, 154, 255);/* Sombra para darle más énfasis */
+            box-shadow: 0px 0px 20px rgb(154, 154, 255);
+            /* Sombra para darle más énfasis */
         }
-        #habilidades, #contacto{
-            background-color: #355C7D; padding: 1%; 
+
+        #habilidades,
+        #contacto {
+            background-color: #355C7D;
+            padding: 1%;
             border-radius: 5px;
             box-shadow: 0px 0px 15px rgb(242, 237, 237);
         }
-        main img{
-            padding: 3%; 
+
+        main img {
+            padding: 3%;
             border-radius: 40px;
         }
+
         .dynamic-list .icon {
             display: none;
             padding: 3%;
         }
+
         .dynamic-list .txt:hover {
             display: none;
         }
-        .dynamic-list .txt:hover + .icon {
-            display: inline; 
+
+        .dynamic-list .txt:hover+.icon {
+            display: inline;
         }
+
         .dynamic-list img {
-            width: 70%;
+            width: 100%;
         }
-        .dynamic-list li{
-            cursor:text;
+
+        .dynamic-list li {
+            cursor: text;
         }
-        
     </style>
 </head>
 
@@ -149,43 +173,80 @@
                             <ul class="list-unstyled dynamic-list">
                                 <li class="mt-3">
                                     <span class="txt">Python</span>
-                                    <span class="icon"><img class="img-fluid" src="{% static 'app/img/python_icon.ico'%}"></span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/python_icon.ico'%}"></span>
                                 </li>
                                 <li>
                                     <span class="txt">Java</span>
-                                    <span class="icon"><img class="img-fluid" src="{% static 'app/img/java_icon.ico'%}"></span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/java_icon.ico'%}"></span>
                                 </li>
                                 <li>
                                     <span class="txt">C#</span>
-                                    <span class="icon"><img class="img-fluid" src="{% static 'app/img/c_sharp_icon.ico'%}"></span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/c_sharp_icon_2.ico'%}"></span>
                                 </li>
                             </ul>
-                            
+
                         </div>
                         <div class="col-5 col-md-3 mt-3">
                             <b class="text-center">Frameworks</b>
                             <ul class="list-unstyled dynamic-list">
                                 <li class="mt-3">
-                                    <span>Bootstrap</span>
+                                    <span class="txt">Bootstrap</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/bootstrap_icon.ico'%}"></span>
                                 </li>
-                                <li>Vue.js</li>
-                                <li>EF Core</li>
-                                <li>.NET - WPF</li>
+                                <li>
+                                    <span class="txt">Vue.js</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/vue_icon.ico'%}"></span>
+                                </li>
+                                <li>
+                                    <span class="txt">EF Core</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/ef_core_icon.ico'%}"></span>
+                                </li>
+                                <li>
+                                    <span class="txt">.NET - WPF</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/net_icon.ico'%}"></span>
+                                </li>
                             </ul>
                         </div>
                         <div class="col-5 col-md-3 mt-3">
                             <b class="text-center">Metodologías</b>
-                            <ul class="list-unstyled">
-                                <li class="mt-3">XP</li>
-                                <li>SCRUM</li>
+                            <ul class="list-unstyled dynamic-list">
+                                <li class="mt-3">
+                                    <span class="txt">XP</span>
+                                    <span class="icon" style="width: 80%;"><img class="img-fluid"
+                                            src="{% static 'app/img/agile_icon.ico'%}"></span>
+                                </li>
+                                <li>
+                                    <span class="txt">SCRUM</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/agile_icon.ico'%}"></span>
+                                </li>
                             </ul>
                         </div>
                         <div class="col-5 col-md-3 mt-3">
                             <b class="text-center">Bases de datos</b>
-                            <ul class="list-unstyled">
-                                <li class="mt-3">SQL Server</li>
-                                <li>MySQL</li>
-                                <li>MongoDB</li>
+                            <ul class="list-unstyled dynamic-list">
+                                <li class="mt-3">
+                                    <span class="txt">SQL Server</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/sql_server_icon.ico'%}"></span>
+                                </li>
+                                <li>
+                                    <span class="txt">MySQL</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/mysql_icon.ico'%}"></span>
+                                </li>
+                                <li>
+                                    <span class="txt">MongoDB</span>
+                                    <span class="icon"><img class="img-fluid"
+                                            src="{% static 'app/img/mongo_db_icon.ico'%}"></span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -217,7 +278,7 @@
                 <div class="col-10 col-md-10 d-flex flex-column align-items-center">
                     <h4 class="text-center mt-3">Proyectos</h4>
                     <div class="card mt-4" style="width: 18rem; background-color: #427D9D; color: #F0F0F0;">
-                        <img class="card-img-top" src="{% static 'app/img/cavamym_logo.jpg' %}" alt="CAVAMYM APP" 
+                        <img class="card-img-top" src="{% static 'app/img/cavamym_logo.jpg' %}" alt="CAVAMYM APP"
                             loading="lazy" style="width: 100%; height: 50%;">
                         <div class="card-body">
                             <h5 class="card-title">CAVAMYM APP</h5>
@@ -229,7 +290,7 @@
                 </div>
             </div>
         </section>
-        
+
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -242,6 +303,13 @@
             crossorigin="anonymous"></script>
         <script src="{% static 'app/js/index.js' %}"></script>
     </div>
+
+    <section style="background-color: #2d325b; border-radius:20px" class="mt-5 container-fluid">
+        <div class="row justify-content-center w-100">
+            <h4>Acerca de mi</h4>
+        </div>
+    </section>
+
     <footer class="mt-5">
         <p class="text-center">© 2024 Carlos Paucar Veliz - Todos los derechos reservados</p>
     </footer>
