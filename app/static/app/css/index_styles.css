@@ -1,36 +1,50 @@
 body {
-    background-color: #2B2E4A;
+    background-color: #1A1A2E;
     color: #DBE4EE;
-    font-family: 'Poppins','SEGOE UI', 'LUCIDA SANS';
+    font-family: 'Poppins', 'SEGOE UI', 'LUCIDA SANS';
+    font-size: 1rem;
 }
+
+.navbar {
+    background-color: #0f3460;
+}
+
 .nav-links li {
     margin-right: 1%;
 }
+
 a {
     color: #DBE4EE;
     font-weight: 500;
 }
+
 a:hover {
     color: lightgreen;
     text-decoration: none;
 }
-.habilidades-contacto {
+
+/* Clase base para elementos que se animarán al scroll */
+.animate-on-scroll {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-.habilidades-contacto.visible {
+
+/* Clase que se añade cuando el elemento es visible */
+.animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
 }
+
 footer {
-    background-color: #1A447A;
+    background-color: #2D4059;
     padding: 10px;
     text-align: center;
     margin-top: 20px;
     color: white;
 }
-#habilidades ul li{
+
+#habilidades ul li {
     text-align: center;
     background-color: #80CBC4;
     color: black;
@@ -38,4 +52,84 @@ footer {
     padding: 10px 20px;
     margin: 10px 0;
     border-radius: 20px;
+}
+
+/* Para pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 576px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    main img {
+        width: 60%;
+    }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (min-width: 576px) and (max-width: 992px) {
+    body {
+        font-size: 1.1rem;
+    }
+}
+
+#proyectos .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #F0F0F0;
+    background-color: #313456;
+    width: 18rem;
+}
+
+#proyectos .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgb(154, 154, 255);
+}
+
+#habilidades,
+#contacto {
+    background-color: #263962;
+    padding: 1%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgb(242, 237, 237);
+}
+
+main img {
+    padding: 3%;
+    border-radius: 40px;
+}
+
+.dynamic-list .icon {
+    display: none;
+    padding: 3%;
+}
+
+.dynamic-list .txt:hover {
+    display: none;
+}
+
+.dynamic-list .txt:hover+.icon {
+    display: inline;
+}
+
+.dynamic-list img {
+    width: 100%;
+}
+
+.dynamic-list li {
+    cursor: text;
+}
+
+.seccion-about {
+    background-color: #263962;
+    border-radius: 20px;
+}
+
+.seccion-proyectos{
+    margin-bottom: 10vh;
+}
+
+.cavamym-card img {
+    width: 30%;
+    background-color: #a5abed;
+    padding: 2%;
+    border-radius: 5px
 }

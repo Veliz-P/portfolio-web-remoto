@@ -1,8 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
 <html lang="en" class="h-100">
-</html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,131 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <!-- <link rel="stylesheet" href="{% static 'app/css/index_styles.css' %}"> -->
-    <style>
-        body {
-            background-color: #1A1A2E;
-            color: #DBE4EE;
-            font-family: 'Poppins', 'SEGOE UI', 'LUCIDA SANS';
-            font-size: 1rem;
-        }
-
-        .nav-links li {
-            margin-right: 1%;
-        }
-
-        a {
-            color: #DBE4EE;
-            font-weight: 500;
-        }
-
-        a:hover {
-            color: lightgreen;
-            text-decoration: none;
-        }
-
-        /* Clase base para elementos que se animarán al scroll */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        /* Clase que se añade cuando el elemento es visible */
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        footer {
-            background-color: #2D4059;
-            padding: 10px;
-            text-align: center;
-            margin-top: 20px;
-            color: white;
-        }
-
-        #habilidades ul li {
-            text-align: center;
-            background-color: #80CBC4;
-            color: black;
-            font-weight: 500;
-            padding: 10px 20px;
-            margin: 10px 0;
-            border-radius: 20px;
-        }
-
-        /* Para pantallas pequeñas (dispositivos móviles) */
-        @media (max-width: 576px) {
-            body {
-                font-size: 0.9rem;
-            }
-
-            main img {
-                width: 60%;
-            }
-        }
-
-        /* Para pantallas medianas (tabletas) */
-        @media (min-width: 576px) and (max-width: 992px) {
-            body {
-                font-size: 1.1rem;
-            }
-        }
-
-        #proyectos .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: #F0F0F0;
-            background-color: #313456;
-            width: 18rem;
-        }
-
-        #proyectos .card:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px rgb(154, 154, 255);
-            /* Sombra para darle más énfasis */
-        }
-
-        #habilidades,
-        #contacto {
-            background-color: #263962;
-            padding: 1%;
-            border-radius: 5px;
-            box-shadow: 0px 0px 15px rgb(242, 237, 237);
-        }
-
-        main img {
-            padding: 3%;
-            border-radius: 40px;
-        }
-
-        .dynamic-list .icon {
-            display: none;
-            padding: 3%;
-        }
-
-        .dynamic-list .txt:hover {
-            display: none;
-        }
-
-        .dynamic-list .txt:hover+.icon {
-            display: inline;
-        }
-
-        .dynamic-list img {
-            width: 100%;
-        }
-
-        .dynamic-list li {
-            cursor: text;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'app/css/index_styles.css' %}">
 </head>
-
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0f3460;">
-            <a class="navbar-brand fw-bold" href="#">PORTFOLIO</a>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand fw-bold" href="/">PORTFOLIO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -143,25 +22,25 @@
                     <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Acerca</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Acerca</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <div class="container-fluid mt-5">
-        <main class="d-flex align-items-center justify-content-center min-vh-100">
+        <main class="d-flex align-items-center justify-content-center">
             <div class="row justify-content-center text-center text-md-left">
                 <div class="col-md-5">
                     <img class="img-fluid mx-auto d-block" src="{% static 'app/img/img_user_example.jpg' %}" width="300"
-                        height="200" alt="User  Image">
+                        height="200" alt="User Image">
                 </div>
                 <div class="col-md-5 order-md-first">
                     <h1 class="fw-bold">¡Hola! Soy Carlos <br>Paucar</h1>
                     <p>Soy un desarrollador de software apasionado por la informática y las soluciones tecnológicas.
                         Tengo experiencia en el desarrollo de aplicaciones de escritorio y sitios web, por lo que si
                         buscas a alguien comprometido con la calidad y el buen desarrollo, ¡contáctame!</p>
-                    <a href="#proyectos" class="btn btn-info mt-3" style="font-weight: 500;">Proyectos</a>
+                    <a href="#proyectos" class="btn btn-info mt-3">Proyectos</a>
                 </div>
             </div>
         </main>
@@ -177,20 +56,19 @@
                                 <li class="mt-3">
                                     <span class="txt">Python</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/python_icon.ico'%}"></span>
+                                            src="{% static 'app/img/python_icon.ico'%}" alt="python-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">Java</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/java_icon.ico'%}"></span>
+                                            src="{% static 'app/img/java_icon.ico'%}" alt="java-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">C#</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/c_sharp_icon_2.ico'%}"></span>
+                                            src="{% static 'app/img/c_sharp_icon_2.ico'%}" alt="c-sharp-icon" loading="lazy"></span>
                                 </li>
                             </ul>
-
                         </div>
                         <div class="col-5 col-md-3 mt-3">
                             <b class="text-center">Frameworks</b>
@@ -198,22 +76,22 @@
                                 <li class="mt-3">
                                     <span class="txt">Bootstrap</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/bootstrap_icon.ico'%}"></span>
+                                            src="{% static 'app/img/bootstrap_icon.ico'%}" alt="bootstrap-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">Vue.js</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/vue_icon.ico'%}"></span>
+                                            src="{% static 'app/img/vue_icon.ico'%}" alt="vue-js-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">EF Core</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/ef_core_icon.ico'%}"></span>
+                                            src="{% static 'app/img/ef_core_icon.ico'%}" alt="ef-core-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">.NET - WPF</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/net_icon.ico'%}"></span>
+                                            src="{% static 'app/img/net_icon.ico'%}" alt=".NET-icon" loading="lazy"></span>
                                 </li>
                             </ul>
                         </div>
@@ -223,12 +101,12 @@
                                 <li class="mt-3">
                                     <span class="txt">XP</span>
                                     <span class="icon" style="width: 80%;"><img class="img-fluid"
-                                            src="{% static 'app/img/agile_icon.ico'%}"></span>
+                                            src="{% static 'app/img/agile_icon.ico'%}" alt="xp-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">SCRUM</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/agile_icon.ico'%}"></span>
+                                            src="{% static 'app/img/agile_icon.ico'%}" alt="scrum-icon" loading="lazy"></span>
                                 </li>
                             </ul>
                         </div>
@@ -238,17 +116,17 @@
                                 <li class="mt-3">
                                     <span class="txt">SQL Server</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/sql_server_icon.ico'%}"></span>
+                                            src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">MySQL</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/mysql_icon.ico'%}"></span>
+                                            src="{% static 'app/img/mysql_icon.ico'%}" alt="mysql-icon" loading="lazy"></span>
                                 </li>
                                 <li>
                                     <span class="txt">MongoDB</span>
                                     <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/mongo_db_icon.ico'%}"></span>
+                                            src="{% static 'app/img/mongo_db_icon.ico'%}" alt="mongo-db-icon" loading="lazy"></span>
                                 </li>
                             </ul>
                         </div>
@@ -275,11 +153,11 @@
             </div>
         </section>
 
-        <section id="proyectos" style="margin-bottom: 10vh;" class="seccion-proyectos animate-on-scroll">
+        <section id="proyectos" class="seccion-proyectos animate-on-scroll">
             <div class="row mt-5 justify-content-center">
                 <div class="col-10 col-md-10 d-flex flex-column align-items-center">
                     <h4 class="text-center mt-3">Proyectos</h4>
-                    <div class="card mt-4">
+                    <div class="card mt-4 cavamym-card">
                         <img class="card-img-top" src="{% static 'app/img/cavamym_logo.jpg' %}" alt="CAVAMYM APP"
                             loading="lazy" style="width: 100%; height: 50%;">
                         <div class="card-body">
@@ -288,12 +166,8 @@
                                 de cosméticos y artículos de cuidado personal CAVAMYM S.A.S.</p>
                             <!-- <a href="cavamym/" class="btn btn-info">Detalles</a> -->
                             <p><b>Tecnologías:</b><br>
-                                <img class="img-fluid mt-2"
-                                    style="width:30%; background-color:#a5abed; padding:2%; border-radius:5px"
-                                    src="{% static 'app/img/java_icon.ico'%}">
-                                <img class="img-fluid mt-2"
-                                    style="width:30%; background-color:#a5abed; padding:2%; border-radius:5px"
-                                    src="{% static 'app/img/sql_server_icon.ico'%}">
+                                <img class="img-fluid mt-2" src="{% static 'app/img/java_icon.ico'%}" alt="java-icon" loading="lazy">
+                                <img class="img-fluid mt-2" src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon" loading="lazy">
                             </p>
                             <p>
                                 <b>Rol:</b> Programador, Tester.
@@ -303,21 +177,9 @@
                 </div>
             </div>
         </section>
-
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-        <!-- <script src="{% static 'app/js/index.js' %}"></script> -->
     </div>
 
-    <section style="background-color: #263962; border-radius:20px;" class="mt-5 container-fluid seccion-about animate-on-scroll">
+    <section id="about" class="mt-5 container-fluid seccion-about animate-on-scroll">
         <div class="row justify-content-around text-center">
             <div class="col-12">
                 <h4 class="mt-3">Acerca de mi</h4>
@@ -372,56 +234,15 @@
         <p class="text-center">© 2024 Carlos Paucar Veliz - Todos los derechos reservados</p>
     </footer>
 
-    <script>
-        function setupScrollAnimations(options = {}) {
-            const {
-                selector = '.animate-on-scroll',
-                threshold = 0.6,
-                visibleClass = 'visible',
-                animateOnce = true
-            } = options;
-
-            // Función para animar elementos individuales
-            function animateElement(element) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add(visibleClass);
-                            if (animateOnce) {
-                                observer.unobserve(entry.target);
-                            }
-                        } else if (!animateOnce) {
-                            entry.target.classList.remove(visibleClass);
-                        }
-                    });
-                }, { threshold });
-
-                observer.observe(element);
-            }
-
-            // Configurar animaciones cuando el DOM esté listo
-            document.addEventListener("DOMContentLoaded", function () {
-                const elements = document.querySelectorAll(selector);
-                elements.forEach(animateElement);
-            });
-        }
-
-        // Uso básico (puedes configurar esto según tus necesidades)
-        setupScrollAnimations({
-            selector: '.habilidades-contacto',
-            threshold: 0.6
-        });
-
-        setupScrollAnimations({
-            selector: '.seccion-proyectos',
-            threshold: 0.4
-        });
-        setupScrollAnimations({
-            selector: '.seccion-about',
-            threshold: 0.3
-        });
-
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'app/js/index.js' %}"></script>
 </body>
-
 </html>
