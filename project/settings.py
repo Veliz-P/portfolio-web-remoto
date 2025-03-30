@@ -25,11 +25,13 @@ SECRET_KEY = 'django-insecure-v!wwjb5%a^6imbhb&lh^qm+k96^gmg$m9@dj(sx8^4nq^@6w==
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']  # Seguridad para forms
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['velizportfolio.up.railway.app']
 # Añade seguridad para HTTPS
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
