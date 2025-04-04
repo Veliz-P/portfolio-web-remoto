@@ -89,6 +89,9 @@
             main img {
                 width: 60%;
             }
+            .cavamym-card {
+                opacity: 1;
+            }
         }
 
         /* Para pantallas medianas (tabletas) */
@@ -96,18 +99,21 @@
             body {
                 font-size: 1.1rem;
             }
+            .cavamym-card {
+                opacity: 1;
+            }
         }
 
         #proyectos .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             color: #F0F0F0;
             background-color: #313456;
             width: 18rem;
+            transition: transform 0.3s ease;
         }
 
         #proyectos .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 20px rgb(154, 154, 255);
+            transform: scale(1.03);
+            opacity: 1;
         }
 
         /* #habilidades, 
@@ -132,16 +138,21 @@
         }
 
         .cavamym-card img {
-            width: 25%;
+            width: 13%;
             background-color: #a5abed;
-            padding: 2%;
-            border-radius: 5px
+            padding: 1%;
+            border-radius: 5px;
+            margin-right: 3px;
+        }
+
+        .cavamym-card {
+            opacity: 0.9;
         }
 
         .btn-proyecto {
             background-color: #D91656;
             font-weight: 500;
-            box-shadow: 0px 0px 20px rgb(219, 91, 91);
+            box-shadow: 0px 0px 15px rgb(219, 91, 91);
         }
 
         .hero-section a:hover {
@@ -167,13 +178,20 @@
             border-radius: 20px;
         }
 
+        #proyectos {
+            box-shadow: 0 0 50px #6856f0;
+            border-radius: 20px;
+        }
+
         .neon {
             text-shadow:
                 0 0 5px rgba(120, 106, 194, 0.3),
                 0 0 10px rgba(120, 106, 194, 0.2),
                 0 0 15px rgba(120, 106, 194, 0.1),
                 0 0 20px rgba(120, 106, 194, 0.05);
-            transition: all 0.3s ease;
+        }
+        h5{
+            font-weight: bold;
         }
     </style>
 </head>
@@ -204,8 +222,8 @@
                     height="200" alt="User Image">
             </div>
             <div class="col-9 col-md-5 order-md-first">
-                <h1 class="fw-bold">¡Hola! Soy <span class="neon" style="color: #786ac2;">Carlos <br>Paucar</span></h1>
-                <p>Soy un <span>desarrollador de software</span> apasionado por la informática y programación.<br>
+                <h1 class="fw-bold">¡Hola! Soy <span class="neon" style="color: #907cf4;">Carlos <br>Paucar</span></h1>
+                <p>Soy un <span>desarrollador de software</span> apasionado por la informática y la programación.<br>
                     Tengo experiencia en el desarrollo de <span>aplicaciones de escritorio</span> y
                     <span>sitios web</span>, entonces si
                     buscas a alguien comprometido con la calidad y buen desarrollo, <span>¡contáctame!</span>
@@ -218,7 +236,7 @@
             <div class="col-10 col-md-8 d-flex flex-column align-items-center mt-4">
                 <h2 class="fw-bold text-center">Habilidades</h2>
                 <div class="row justify-content-center w-100">
-                    <div class="col-6 col-md mt-3 px-2">
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
                         <b class="text-center d-block">Lenguajes de programación</b>
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
@@ -235,9 +253,13 @@
                                 <span class="icon"><img class="img-fluid" src="{% static 'app/img/c_sharp_icon_2.ico'%}"
                                         alt="c-sharp-icon" loading="lazy"></span>
                             </li>
+                            <li>
+                                <span><img src="{% static 'app/img/javascript_icon_2.ico'%}"
+                                        alt="javascript-icon"></span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-6 col-md mt-3 px-2">
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
                         <b class="text-center d-block">Frameworks</b>
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
@@ -262,7 +284,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-6 col-md mt-3 px-2">
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
                         <b class="text-center d-block">Metodologías</b>
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
@@ -283,7 +305,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-6 col-md mt-3 px-2">
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
                         <b class="text-center d-block">Bases de datos</b>
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
@@ -303,7 +325,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-6 col-md mt-3 px-2">
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
                         <b class="text-center d-block">Herramientas</b>
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
@@ -330,24 +352,69 @@
         </section>
 
         <section id="proyectos" class="seccion-proyectos animate-on-scroll row mt-5 justify-content-center">
-            <div class="col-10 col-md-10 d-flex flex-column align-items-center">
-                <h2 class="text-center mt-3">Proyectos</h2>
-                <div class="card mt-4 cavamym-card">
-                    <img class="card-img-top" src="{% static 'app/img/cavamym_logo.jpg' %}" alt="CAVAMYM APP"
-                        loading="lazy" style="width: 100%; height: 50%;">
-                    <div class="card-body">
-                        <h5 class="card-title">CAVAMYM APP</h5>
-                        <p class="card-text">Programa de escritorio para la gestión de información del laboratorio
-                            de cosméticos y artículos de cuidado personal CAVAMYM S.A.S.</p>
-                        <!-- <a href="cavamym/" class="btn btn-info">Detalles</a> -->
+            <div class="col-10">
+                <h2 class="text-center mt-4">Proyectos</h2>
+                <div class="card d-flex flex-column d-md-flex flex-md-row mt-5 align-items-center 
+                    justify-content-start cavamym-card cavamym-card-mobile mb-2"
+                    style="width: 75vw; padding:10px; border-radius:5px">
+                    <div class="col-11 col-md-4">
+                        <img class="card-img-top img-fluid" src="{% static 'app/img/cavamym_logo.jpg'%}"
+                            style="width: 90%;" alt="cavamym-logo">
+                    </div>
+                    <div class="col-11 col-md">
+                        <h5 class="card-title mt-3">CAVAMYM APP</h5>
+                        <p class="card-text"><span style="font-weight: 600;">Software de escritorio</span> para la gestión de información del laboratorio
+                            de cosméticos y artículos de cuidado personal CAVAMYM S.A.S.<br>
+                            El programa fue creado siguiendo una arquitectura <span style="font-weight: 600;">cliente-servidor</span> y permite
+                            llevar un control de datos de clientes, proveedores, productos y personal de la empresa.</p>
                         <p><b>Tecnologías:</b><br>
-                            <img class="img-fluid mt-2" src="{% static 'app/img/java_icon.ico'%}" alt="java-icon"
-                                loading="lazy">
-                            <img class="img-fluid mt-2" src="{% static 'app/img/sql_server_icon.ico'%}"
-                                alt="sql-server-icon" loading="lazy">
+                            <img class="img-fluid mt-2 d-none d-md-inline" src="{% static 'app/img/java_icon.ico'%}"
+                                alt="java-icon" loading="lazy">
+                            <span class="d-md-none">Java</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon" loading="lazy">
+                            <span class="d-md-none">, Sql Server</span>
                         </p>
                         <p>
                             <b>Rol:</b> Programador, Tester.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="card d-flex flex-column d-md-flex flex-md-row mt-5 align-items-center 
+                    justify-content-start cavamym-card cavamym-card-mobile mb-5"
+                    style="width: 75vw; padding:10px; border-radius:5px">
+                    <div class="col-11 col-md-4 order-2">
+                        <img class="card-img-top img-fluid" src="{% static 'app/img/portfolio_screenshot.jpg'%}"
+                            style="width: 90%; height:90%" alt="project-portfolio-web-logo">
+                    </div>
+                    <div class="col-11 col-md">
+                        <h5 class="card-title order-1">Portfolio Web</h5>
+                        <p class="card-text">Espacio digital diseñado para exhibir mi trabajo, habilidades y 
+                            trayectoria profesional. Desarrollado con un enfoque minimalista y responsive, 
+                            este proyecto refleja mi estilo de desarrollo.</p>
+                        <p><b>Tecnologías:</b><br>
+                            <img class="img-fluid mt-2 d-none d-md-inline" src="{% static 'app/img/django_icon.ico'%}"
+                                alt="django-icon" loading="lazy">
+                            <span class="d-md-none">Django</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/bootstrap_icon.ico'%}" alt="bootstrap-icon" loading="lazy">
+                            <span class="d-md-none">, Bootstrap</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/html_icon.ico'%}" alt="sql-html-icon" loading="lazy">
+                            <span class="d-md-none">, Html</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/css_icon.ico'%}" alt="css-icon" loading="lazy">
+                            <span class="d-md-none">, Css</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/javascript_icon_2.ico'%}" alt="javascript-icon" loading="lazy">
+                            <span class="d-md-none">, JavaSript</span>
+                        </p>
+                        <p>
+                            <b>Código:</b> <a href="https://github.com/Veliz-P/portfolio-web-remoto.git" target="_blank">
+                                <i class="bi bi-github mr-3" style="font-size: 2rem;"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -470,22 +537,22 @@
         // Uso básico (puedes configurar esto según tus necesidades)
         setupScrollAnimations({
             selector: '#habilidades',
-            threshold: 0.2,
+            threshold: 0.15,
             animateOnce: false
         });
         setupScrollAnimations({
             selector: '#proyectos',
-            threshold: 0.4,
+            threshold: 0.15,
             animateOnce: false
         });
         setupScrollAnimations({
             selector: '#about',
-            threshold: 0.4,
+            threshold: 0.15,
             animateOnce: false
         });
         setupScrollAnimations({
             selector: '#contacto',
-            threshold: 0.4,
+            threshold: 0.15,
             animateOnce: false
         });
     </script>
