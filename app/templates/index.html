@@ -145,7 +145,7 @@
         }
 
         .hero-section a:hover {
-            transform: scale(1.1);
+            transform: scale(1.07);
             transition: transform 0.3s ease-in-out;
         }
 
@@ -161,9 +161,19 @@
         #habilidades img {
             width: 55%;
         }
-        #habilidades{
+
+        #habilidades {
             box-shadow: 0 0 50px #8a4075;
             border-radius: 20px;
+        }
+
+        .neon {
+            text-shadow:
+                0 0 5px rgba(120, 106, 194, 0.3),
+                0 0 10px rgba(120, 106, 194, 0.2),
+                0 0 15px rgba(120, 106, 194, 0.1),
+                0 0 20px rgba(120, 106, 194, 0.05);
+            transition: all 0.3s ease;
         }
     </style>
 </head>
@@ -194,7 +204,7 @@
                     height="200" alt="User Image">
             </div>
             <div class="col-9 col-md-5 order-md-first">
-                <h1 class="fw-bold">¡Hola! Soy Carlos <br>Paucar</h1>
+                <h1 class="fw-bold">¡Hola! Soy <span class="neon" style="color: #786ac2;">Carlos <br>Paucar</span></h1>
                 <p>Soy un <span>desarrollador de software</span> apasionado por la informática y programación.<br>
                     Tengo experiencia en el desarrollo de <span>aplicaciones de escritorio</span> y
                     <span>sitios web</span>, entonces si
@@ -213,14 +223,17 @@
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
                                 <span class="txt">Python</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/python_icon.ico'%}" alt="python-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/python_icon.ico'%}"
+                                        alt="python-icon" loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">Java</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/java_icon.ico'%}" alt="java-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/java_icon.ico'%}"
+                                        alt="java-icon" loading="lazy"></span>
                             </li>
                             <li>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/c_sharp_icon_2.ico'%}" alt="c-sharp-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/c_sharp_icon_2.ico'%}"
+                                        alt="c-sharp-icon" loading="lazy"></span>
                             </li>
                         </ul>
                     </div>
@@ -229,18 +242,23 @@
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
                                 <span class="txt">Bootstrap</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/bootstrap_icon.ico'%}" alt="bootstrap-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/bootstrap_icon.ico'%}"
+                                        alt="bootstrap-icon" loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">Vue.js</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/vue_icon.ico'%}" alt="vue-js-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/vue_icon.ico'%}"
+                                        alt="vue-js-icon" loading="lazy"></span>
                             </li>
                             <li>
-                                <span class="icon"><img class="img-fluid" style="width:70%" src="{% static 'app/img/ef_core_icon.ico'%}" alt="ef-core-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" style="width:70%"
+                                        src="{% static 'app/img/ef_core_icon.ico'%}" alt="ef-core-icon"
+                                        loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">WPF</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/net_icon.ico'%}" alt=".NET-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/net_icon.ico'%}"
+                                        alt=".NET-icon" loading="lazy"></span>
                             </li>
                         </ul>
                     </div>
@@ -249,15 +267,19 @@
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
                                 <span class="txt">XP</span><br>
-                                <span class="icon" style="width: 80%;"><img class="img-fluid" style="width: 80%;" src="{% static 'app/img/agile_icon.ico'%}" alt="xp-icon" loading="lazy"></span>
+                                <span class="icon" style="width: 80%;"><img class="img-fluid" style="width: 80%;"
+                                        src="{% static 'app/img/agile_icon.ico'%}" alt="xp-icon" loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">SCRUM</span><br>
-                                <span class="icon"><img class="img-fluid" style="width: 70%;" src="{% static 'app/img/agile_icon.ico'%}" alt="scrum-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" style="width: 70%;"
+                                        src="{% static 'app/img/agile_icon.ico'%}" alt="scrum-icon"
+                                        loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">Kanban</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/kanban_icon.ico'%}" alt="scrum-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/kanban_icon.ico'%}"
+                                        alt="scrum-icon" loading="lazy"></span>
                             </li>
                         </ul>
                     </div>
@@ -265,14 +287,19 @@
                         <b class="text-center d-block">Bases de datos</b>
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
-                                <span class="icon"><img class="img-fluid" style="width: 80%;" src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" style="width: 80%;"
+                                        src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon"
+                                        loading="lazy"></span>
                             </li>
                             <li>
-                                <span class="icon"><img class="img-fluid" style="width: 80%;" src="{% static 'app/img/mysql_icon.ico'%}" alt="mysql-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" style="width: 80%;"
+                                        src="{% static 'app/img/mysql_icon.ico'%}" alt="mysql-icon"
+                                        loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">MongoDB</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/mongo_db_icon.ico'%}" alt="mongo-db-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/mongo_db_icon.ico'%}"
+                                        alt="mongo-db-icon" loading="lazy"></span>
                             </li>
                         </ul>
                     </div>
@@ -281,15 +308,20 @@
                         <ul class="list-unstyled dynamic-list mt-2">
                             <li class="mt-3">
                                 <span class="txt">Git</span><br>
-                                <span class="icon"><img class="img-fluid" style="width: 70%;" src="{% static 'app/img/git_icon.ico'%}" alt="sql-server-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" style="width: 70%;"
+                                        src="{% static 'app/img/git_icon.ico'%}" alt="sql-server-icon"
+                                        loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">Visual Studio 2022</span><br>
-                                <span class="icon"><img class="img-fluid" style="width: 70%;" src="{% static 'app/img/visual_studio_icon.ico'%}" alt="mysql-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" style="width: 70%;"
+                                        src="{% static 'app/img/visual_studio_icon.ico'%}" alt="mysql-icon"
+                                        loading="lazy"></span>
                             </li>
                             <li>
                                 <span class="txt">VS Code</span><br>
-                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/vs_code_icon.ico'%}" alt="mongo-db-icon" loading="lazy"></span>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/vs_code_icon.ico'%}"
+                                        alt="mongo-db-icon" loading="lazy"></span>
                             </li>
                         </ul>
                     </div>
@@ -371,23 +403,23 @@
         </section>
 
         <section id="contacto" class="row justify-content-center text-center ml-5 mr-5 animate-on-scroll">
-                <div class="col-10 col-md-4 d-flex flex-column align-items-center mt-5 mt-md-4">
-                    <h3 class="fw-bold text-center fs-4 fs-md-3">Contacto</h3>
-                    <ul class="mt-3 list-unstyled">
-                        <li class="d-flex align-items-center">
-                            <i class="bi bi-telephone-fill mr-3" style="font-size: 2rem;"></i>
-                            <a href="tel:+593987272340">+593 98 727 2340</a>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="bi bi-envelope-fill mr-3" style="font-size: 2rem;"></i>
-                            <a href="mailto:paucarcarlos2108@gmail.com">paucarcarlos2108@gmail.com</a>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="bi bi-github mr-3" style="font-size: 2rem;"></i>
-                            <a href="https://github.com/Veliz-P" target="_blank">Veliz-P</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-10 col-md-4 d-flex flex-column align-items-center mt-5 mt-md-4">
+                <h3 class="fw-bold text-center fs-4 fs-md-3">Contacto</h3>
+                <ul class="mt-3 list-unstyled">
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-telephone-fill mr-3" style="font-size: 2rem;"></i>
+                        <a href="tel:+593987272340">+593 98 727 2340</a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-envelope-fill mr-3" style="font-size: 2rem;"></i>
+                        <a href="mailto:paucarcarlos2108@gmail.com">paucarcarlos2108@gmail.com</a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-github mr-3" style="font-size: 2rem;"></i>
+                        <a href="https://github.com/Veliz-P" target="_blank">Veliz-P</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
 
