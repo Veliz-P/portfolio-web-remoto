@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" class="h-100">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,244 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{% static 'app/css/index_styles.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'app/css/index_styles.css' %}"> -->
+    <style>
+        body {
+            background-color: #210F37;
+            color: #DBE4EE;
+            font-family: 'Poppins', 'SEGOE UI', 'LUCIDA SANS';
+            font-size: 1rem;
+        }
+
+        .navbar {
+            opacity: 0.7;
+            box-shadow: 0 0 100px #D70654;
+        }
+
+        .nav-links li {
+            margin-right: 1%;
+        }
+        .navbar:hover{
+            opacity: 1;
+        }
+
+        a {
+            color: #DBE4EE;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: ghostwhite;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Clase base para elementos que se animarán al scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        /* Clase que se añade cuando el elemento es visible */
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: #584a85;
+            opacity: 0.7;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        #habilidades ul li {
+            text-align: center;
+            background-color: #8a4075;
+            color: white;
+            font-weight: 500;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 15px;
+            opacity: 0.8;
+        }
+
+        #habilidades :hover {
+            transition: opacity ease-in-out 0.3s;
+
+            opacity: 1.5;
+        }
+
+        #habilidades ul li:hover {
+            box-shadow: 0 0 25px #D70654;
+        }
+
+        /* Para pantallas pequeñas (dispositivos móviles) */
+        @media (max-width: 576px) {
+            body {
+                font-size: 0.9rem;
+            }
+
+            main img {
+                width: 60%;
+            }
+
+            .cavamym-card {
+                opacity: 1;
+            }
+        }
+
+        /* Para pantallas medianas (tabletas) */
+        @media (min-width: 576px) and (max-width: 992px) {
+            body {
+                font-size: 1.1rem;
+            }
+
+            .cavamym-card {
+                opacity: 1;
+            }
+        }
+
+        #proyectos .card {
+            color: #F0F0F0;
+            background-color: #313456;
+            width: 18rem;
+            transition: transform 0.3s ease;
+        }
+
+        #proyectos .card:hover {
+            transform: scale(1.03);
+            opacity: 1;
+        }
+
+        /* #habilidades, 
+        #contacto {
+            background-color: #263962;
+            padding: 1%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px rgb(242, 237, 237);
+        } */
+        main img {
+            padding: 3%;
+            border-radius: 40px;
+        }
+
+        /*
+        .seccion-about {
+            background-color: #263962;
+            border-radius: 20px;
+        }
+        */
+
+        .seccion-proyectos {
+            margin-bottom: 10vh;
+        }
+
+        .cavamym-card img {
+            width: 13%;
+            background-color: #a5abed;
+            padding: 1%;
+            border-radius: 5px;
+            margin-right: 3px;
+        }
+
+        .cavamym-card {
+            opacity: 0.9;
+        }
+
+        .btn-proyecto {
+            background-color: #D91656;
+            font-weight: 500;
+            box-shadow: 0px 0px 15px rgb(219, 91, 91);
+        }
+
+        .hero-section a:hover {
+            transform: scale(1.07);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero-section span {
+            font-weight: 600;
+        }
+
+        .hero-section {
+            margin-top: 5%;
+            margin-bottom: 11%;
+        }
+
+        #habilidades img {
+            width: 55%;
+        }
+
+        #habilidades {
+            box-shadow: 0 0 50px #8a4075;
+            border-radius: 20px;
+        }
+
+        #proyectos {
+            box-shadow: 0 0 50px #6856f0;
+            border-radius: 20px;
+        }
+
+        #about {
+            box-shadow: 0 0 50px #019b96;
+            border-radius: 20px;
+        }
+
+        .neon {
+            text-shadow:
+                0 0 5px rgba(120, 106, 194, 0.3),
+                0 0 10px rgba(120, 106, 194, 0.2),
+                0 0 15px rgba(120, 106, 194, 0.1),
+                0 0 20px rgba(120, 106, 194, 0.05);
+        }
+
+        h5 {
+            font-weight: bold;
+        }
+
+        /* Estilos para la sección de contacto */
+        #contacto {
+            background-color: #210F37;
+            padding: 60px 0;
+            
+        }
+
+        .contact-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 5px solid #4F959D;
+            transform: translateX(7px);
+        }
+
+        .contact-text a {
+            color: #63b6c0;
+            transition: color 0.3s ease;
+        }
+        .contact-text a:hover {
+            color: #DBE4EE;
+            text-decoration: none;
+        }
+        .btn-contact {
+            background-color: #4F959D;
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: transform 0.3s ease;
+        }
+        .btn-contact:hover {
+            transform: translateY(-8px);
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -29,209 +266,338 @@
     </header>
 
     <div class="container-fluid mt-5">
-        <main class="d-flex align-items-center justify-content-center">
-            <div class="row justify-content-center text-center text-md-left">
-                <div class="col-md-5">
-                    <img class="img-fluid mx-auto d-block" src="{% static 'app/img/img_user_example.jpg' %}" width="300"
-                        height="200" alt="User Image">
-                </div>
-                <div class="col-md-5 order-md-first">
-                    <h1 class="fw-bold">¡Hola! Soy Carlos <br>Paucar</h1>
-                    <p>Soy un desarrollador de software apasionado por la informática y las soluciones tecnológicas.
-                        Tengo experiencia en el desarrollo de aplicaciones de escritorio y sitios web, por lo que si
-                        buscas a alguien comprometido con la calidad y el buen desarrollo, ¡contáctame!</p>
-                    <a href="#proyectos" class="btn btn-info mt-3">Proyectos</a>
-                </div>
+        <main class="row justify-content-center text-center text-md-left hero-section
+        d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-5">
+                <img class="img-fluid mx-auto d-block" src="{% static 'app/img/img_user_example.jpg' %}" width="300"
+                    height="200" alt="User Image">
+            </div>
+            <div class="col-9 col-md-5 order-md-first">
+                <h1 class="fw-bold">¡Hola! Soy <span class="neon" style="color: #907cf4;">Carlos <br>Paucar</span></h1>
+                <p>Soy un <span>desarrollador de software</span> apasionado por la informática y la programación.<br>
+                    Tengo experiencia en el desarrollo de <span>aplicaciones de escritorio</span> y
+                    <span>sitios web</span>, entonces si
+                    buscas a alguien comprometido con la calidad y buen desarrollo, <span>¡contáctame!</span>
+                </p>
+                <a href="#proyectos" class="btn mt-3 btn-proyecto">Proyectos</a>
             </div>
         </main>
 
-        <section class="habilidades-contacto animate-on-scroll">
-            <div class="row mt-5 justify-content-center align-items-center">
-                <div class="col-10 col-md-6 d-flex flex-column align-items-center mt-4" id="habilidades">
-                    <h4 class="fw-bold text-center">Habilidades</h4>
-                    <div class="row justify-content-center">
-                        <div class="col-5 col-md-3 mt-3">
-                            <b class="text-center">Lenguajes de programación</b>
-                            <ul class="list-unstyled dynamic-list">
-                                <li class="mt-3">
-                                    <span class="txt">Python</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/python_icon.ico'%}" alt="python-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">Java</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/java_icon.ico'%}" alt="java-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">C#</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/c_sharp_icon_2.ico'%}" alt="c-sharp-icon" loading="lazy"></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-5 col-md-3 mt-3">
-                            <b class="text-center">Frameworks</b>
-                            <ul class="list-unstyled dynamic-list">
-                                <li class="mt-3">
-                                    <span class="txt">Bootstrap</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/bootstrap_icon.ico'%}" alt="bootstrap-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">Vue.js</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/vue_icon.ico'%}" alt="vue-js-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">EF Core</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/ef_core_icon.ico'%}" alt="ef-core-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">.NET - WPF</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/net_icon.ico'%}" alt=".NET-icon" loading="lazy"></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-5 col-md-3 mt-3">
-                            <b class="text-center">Metodologías</b>
-                            <ul class="list-unstyled dynamic-list">
-                                <li class="mt-3">
-                                    <span class="txt">XP</span>
-                                    <span class="icon" style="width: 80%;"><img class="img-fluid"
-                                            src="{% static 'app/img/agile_icon.ico'%}" alt="xp-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">SCRUM</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/agile_icon.ico'%}" alt="scrum-icon" loading="lazy"></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-5 col-md-3 mt-3">
-                            <b class="text-center">Bases de datos</b>
-                            <ul class="list-unstyled dynamic-list">
-                                <li class="mt-3">
-                                    <span class="txt">SQL Server</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">MySQL</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/mysql_icon.ico'%}" alt="mysql-icon" loading="lazy"></span>
-                                </li>
-                                <li>
-                                    <span class="txt">MongoDB</span>
-                                    <span class="icon"><img class="img-fluid"
-                                            src="{% static 'app/img/mongo_db_icon.ico'%}" alt="mongo-db-icon" loading="lazy"></span>
-                                </li>
-                            </ul>
-                        </div>
+        <section id="habilidades" class="animate-on-scroll row mt-5 justify-content-center align-items-center">
+            <div class="col-10 col-md-8 d-flex flex-column align-items-center mt-4 mb-5">
+                <h2 class="fw-bold text-center">Habilidades</h2>
+                <div class="row justify-content-center w-100">
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
+                        <b class="text-center d-block">Lenguajes de programación</b>
+                        <ul class="list-unstyled dynamic-list mt-2">
+                            <li class="mt-3">
+                                <span class="txt">Python</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/python_icon.ico'%}"
+                                        alt="python-icon" loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">Java</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/java_icon.ico'%}"
+                                        alt="java-icon" loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/c_sharp_icon_2.ico'%}"
+                                        alt="c-sharp-icon" loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span><img src="{% static 'app/img/javascript_icon_2.ico'%}"
+                                        alt="javascript-icon"></span>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-12 col-md-1"></div>
-                <div class="col-10 col-md-4 d-flex flex-column align-items-center mt-5 mt-md-4" id="contacto">
-                    <h4 class="fw-bold text-center fs-4 fs-md-3">Contacto</h4>
-                    <ul class="mt-3 list-unstyled">
-                        <li class="d-flex align-items-center">
-                            <i class="bi bi-telephone-fill mr-3" style="font-size: 2rem;"></i>
-                            <a href="tel:+593987272340">+593 98 727 2340</a>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="bi bi-envelope-fill mr-3" style="font-size: 2rem;"></i>
-                            <a href="mailto:paucarcarlos2108@gmail.com">paucarcarlos2108@gmail.com</a>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="bi bi-github mr-3" style="font-size: 2rem;"></i>
-                            <a href="https://github.com/Veliz-P" target="_blank">Veliz-P</a>
-                        </li>
-                    </ul>
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
+                        <b class="text-center d-block">Frameworks</b>
+                        <ul class="list-unstyled dynamic-list mt-2">
+                            <li class="mt-3">
+                                <span class="txt">Bootstrap</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/bootstrap_icon.ico'%}"
+                                        alt="bootstrap-icon" loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">Vue.js</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/vue_icon.ico'%}"
+                                        alt="vue-js-icon" loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="icon"><img class="img-fluid" style="width:70%"
+                                        src="{% static 'app/img/ef_core_icon.ico'%}" alt="ef-core-icon"
+                                        loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">WPF</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/net_icon.ico'%}"
+                                        alt=".NET-icon" loading="lazy"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
+                        <b class="text-center d-block">Metodologías</b>
+                        <ul class="list-unstyled dynamic-list mt-2">
+                            <li class="mt-3">
+                                <span class="txt">XP</span><br>
+                                <span class="icon" style="width: 80%;"><img class="img-fluid" style="width: 80%;"
+                                        src="{% static 'app/img/agile_icon.ico'%}" alt="xp-icon" loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">SCRUM</span><br>
+                                <span class="icon"><img class="img-fluid" style="width: 70%;"
+                                        src="{% static 'app/img/agile_icon.ico'%}" alt="scrum-icon"
+                                        loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">Kanban</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/kanban_icon.ico'%}"
+                                        alt="scrum-icon" loading="lazy"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
+                        <b class="text-center d-block">Bases de datos</b>
+                        <ul class="list-unstyled dynamic-list mt-2">
+                            <li class="mt-3">
+                                <span class="icon"><img class="img-fluid" style="width: 80%;"
+                                        src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon"
+                                        loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="icon"><img class="img-fluid" style="width: 80%;"
+                                        src="{% static 'app/img/mysql_icon.ico'%}" alt="mysql-icon"
+                                        loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">MongoDB</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/mongo_db_icon.ico'%}"
+                                        alt="mongo-db-icon" loading="lazy"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md mt-3 px-2 mr-md-2">
+                        <b class="text-center d-block">Herramientas</b>
+                        <ul class="list-unstyled dynamic-list mt-2">
+                            <li class="mt-3">
+                                <span class="txt">Git</span><br>
+                                <span class="icon"><img class="img-fluid" style="width: 70%;"
+                                        src="{% static 'app/img/git_icon.ico'%}" alt="sql-server-icon"
+                                        loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">Visual Studio 2022</span><br>
+                                <span class="icon"><img class="img-fluid" style="width: 70%;"
+                                        src="{% static 'app/img/visual_studio_icon.ico'%}" alt="mysql-icon"
+                                        loading="lazy"></span>
+                            </li>
+                            <li>
+                                <span class="txt">VS Code</span><br>
+                                <span class="icon"><img class="img-fluid" src="{% static 'app/img/vs_code_icon.ico'%}"
+                                        alt="mongo-db-icon" loading="lazy"></span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="proyectos" class="seccion-proyectos animate-on-scroll">
-            <div class="row mt-5 justify-content-center">
-                <div class="col-10 col-md-10 d-flex flex-column align-items-center">
-                    <h4 class="text-center mt-3">Proyectos</h4>
-                    <div class="card mt-4 cavamym-card">
-                        <img class="card-img-top" src="{% static 'app/img/cavamym_logo.jpg' %}" alt="CAVAMYM APP"
-                            loading="lazy" style="width: 100%; height: 50%;">
-                        <div class="card-body">
-                            <h5 class="card-title">CAVAMYM APP</h5>
-                            <p class="card-text">Programa de escritorio para la gestión de información del laboratorio
-                                de cosméticos y artículos de cuidado personal CAVAMYM S.A.S.</p>
-                            <!-- <a href="cavamym/" class="btn btn-info">Detalles</a> -->
-                            <p><b>Tecnologías:</b><br>
-                                <img class="img-fluid mt-2" src="{% static 'app/img/java_icon.ico'%}" alt="java-icon" loading="lazy">
-                                <img class="img-fluid mt-2" src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon" loading="lazy">
-                            </p>
-                            <p>
-                                <b>Rol:</b> Programador, Tester.
-                            </p>
+        <section id="proyectos" class="seccion-proyectos animate-on-scroll row mt-5 justify-content-center">
+            <div class="col-10">
+                <h2 class="text-center mt-4">Proyectos</h2>
+                <div class="card d-flex flex-column d-md-flex flex-md-row mt-5 align-items-center 
+                    justify-content-start cavamym-card cavamym-card-mobile mb-2"
+                    style="width: 75vw; padding:10px; border-radius:5px">
+                    <div class="col-11 col-md-4">
+                        <img class="card-img-top img-fluid" src="{% static 'app/img/cavamym_logo.jpg'%}"
+                            style="width: 90%;" alt="cavamym-logo">
+                    </div>
+                    <div class="col-11 col-md">
+                        <h5 class="card-title mt-3">CAVAMYM APP</h5>
+                        <p class="card-text"><span style="font-weight: 600;">Software de escritorio</span> para la
+                            gestión de información del laboratorio
+                            de cosméticos y artículos de cuidado personal CAVAMYM S.A.S.<br>
+                            El programa fue creado siguiendo una arquitectura <span
+                                style="font-weight: 600;">cliente-servidor</span> y permite
+                            llevar un control de datos de clientes, proveedores, productos y personal de la empresa.</p>
+                        <p><b>Tecnologías:</b><br>
+                            <img class="img-fluid mt-2 d-none d-md-inline" src="{% static 'app/img/java_icon.ico'%}"
+                                alt="java-icon" loading="lazy">
+                            <span class="d-md-none">Java</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/sql_server_icon.ico'%}" alt="sql-server-icon" loading="lazy">
+                            <span class="d-md-none">, Sql Server</span>
+                        </p>
+                        <p>
+                            <b>Rol:</b> Programador, Tester.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="card d-flex flex-column d-md-flex flex-md-row mt-5 align-items-center 
+                    justify-content-start cavamym-card cavamym-card-mobile mb-5"
+                    style="width: 75vw; padding:10px; border-radius:5px">
+                    <div class="col-11 col-md-4 order-2">
+                        <img class="card-img-top img-fluid" src="{% static 'app/img/portfolio_screenshot.jpg'%}"
+                            style="width: 90%; height:90%" alt="project-portfolio-web-logo">
+                    </div>
+                    <div class="col-11 col-md">
+                        <h5 class="card-title order-1">Portfolio Web</h5>
+                        <p class="card-text">Espacio digital diseñado para exhibir mi trabajo, habilidades y
+                            trayectoria profesional. Desarrollado con un enfoque minimalista y responsive,
+                            este proyecto refleja mi estilo de desarrollo.</p>
+                        <p><b>Tecnologías:</b><br>
+                            <img class="img-fluid mt-2 d-none d-md-inline" src="{% static 'app/img/django_icon.ico'%}"
+                                alt="django-icon" loading="lazy">
+                            <span class="d-md-none">Django</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/bootstrap_icon.ico'%}" alt="bootstrap-icon" loading="lazy">
+                            <span class="d-md-none">, Bootstrap</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline" src="{% static 'app/img/html_icon.ico'%}"
+                                alt="sql-html-icon" loading="lazy">
+                            <span class="d-md-none">, Html</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline" src="{% static 'app/img/css_icon.ico'%}"
+                                alt="css-icon" loading="lazy">
+                            <span class="d-md-none">, Css</span>
+                            <img class="img-fluid mt-2 d-none d-md-inline"
+                                src="{% static 'app/img/javascript_icon_2.ico'%}" alt="javascript-icon" loading="lazy">
+                            <span class="d-md-none">, JavaSript</span>
+                        </p>
+                        <p>
+                            <b>Código:</b> <a href="https://github.com/Veliz-P/portfolio-web-remoto.git"
+                                target="_blank">
+                                <i class="bi bi-github mr-3" style="font-size: 2rem;"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mt-5 container-fluid seccion-about animate-on-scroll">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mt-3">
+                    <h2>Acerca de mí</h2>
+                </div>
+                <div class="col-11 col-lg-10 d-flex flex-wrap justify-content-center">
+                    <div class="col-12 col-md-3 mt-4 px-3">
+                        <div class="card bg-transparent border-0">
+                            <div class="card-body text-center text-md-left">
+                                <h5 class="card-title text-center"><i class="bi bi-heart-fill mr-2"></i>Valores</h5>
+                                <ul class="list-unstyled text-left">
+                                    <li class="my-2"><i class="bi bi-check-circle-fill mr-2"></i>Respeto</li>
+                                    <li class="my-2"><i class="bi bi-check-circle-fill mr-2"></i>Honestidad</li>
+                                    <li class="my-2"><i class="bi bi-check-circle-fill mr-2"></i>Trabajo en equipo</li>
+                                    <li class="my-2"><i class="bi bi-check-circle-fill mr-2"></i>Comunicación</li>
+                                    <li class="my-2"><i class="bi bi-check-circle-fill mr-2"></i>Disciplina</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 mt-4 px-3">
+                        <div class="card bg-transparent border-0">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <i class="bi bi-book-fill mr-2"></i>Educación
+                                </h5>
+                                <ul class="list-unstyled">
+                                    <li class="my-3">
+                                        <b>Tecnólogo Superior en Desarrollo de Software</b>
+                                        <p class="mb-0">Instituto Tecnológico Universitario "Rumiñahui" (2023-202x)</p>
+                                    </li>
+                                    <li class="my-3">
+                                        <b>Aprendizaje Autodirigido</b>
+                                        <p class="mb-0">Habilidades construidas mediante proyectos personales y cursos
+                                            especializados.</p>
+                                    </li>
+                                    <li class="my-3">
+                                        <b>Inglés Nivel B2</b>
+                                        <p class="mb-0">Certificado por el Instituto Tecnológico Universitario
+                                            "Rumiñahui"</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-4 px-3">
+                        <div class="card bg-transparent border-0">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <i class="bi bi-person-fill mr-2"></i>Aspectos personales
+                                </h5>
+                                <p class="text-center">
+                                    Soy un desarrollador ecuatoriano de 19 años con 3 años de experiencia en
+                                    programación.
+                                    Mi enfoque se basa en crear software de calidad mediante buenas prácticas,
+                                    comunicación
+                                    clara y metodologías ágiles.
+                                </p>
+                                <p class="text-center">
+                                    Prefiero el trabajo remoto pero estoy abierto a oportunidades presenciales.
+                                    Disfruto aprender nuevas tecnologías y enfrentar desafíos técnicos.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="contacto" class="animate-on-scroll mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center mb-2">
+                        <h2 class="fw-bold" style="color: #907CF4;">¿Listo para colaborar?</h2>
+                    </div>
+                    <div class="col-md-8 col-lg-6">
+                        <div class="contact-card p-4 p-md-5">
+                            <div class="contact-info mb-4">
+                                <div class="contact-item d-flex align-items-center mb-3 p-3 rounded">
+                                    <div class="contact-icon mr-3">
+                                        <i class="bi bi-telephone-fill" style="font-size: 1.5rem;"></i>
+                                    </div>
+                                    <div class="contact-text text-left">
+                                        <h5 class="mb-0">Teléfono</h5>
+                                        <a href="tel:+593987272340" class="text-decoration-none">+593 98 727 2340</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item d-flex align-items-center mb-3 p-3 rounded">
+                                    <div class="contact-icon mr-3">
+                                        <i class="bi bi-envelope-fill" style="font-size: 1.5rem;"></i>
+                                    </div>
+                                    <div class="contact-text text-left">
+                                        <h5 class="mb-0">Email</h5>
+                                        <a href="mailto:paucarcarlos2108@gmail.com"
+                                            class="text-decoration-none">paucarcarlos2108@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item d-flex align-items-center p-3 rounded">
+                                    <div class="contact-icon mr-3">
+                                        <i class="bi bi-github" style="font-size: 1.5rem;"></i>
+                                    </div>
+                                    <div class="contact-text text-left">
+                                        <h5 class="mb-0">GitHub</h5>
+                                        <a href="https://github.com/Veliz-P" target="_blank"
+                                            class="text-decoration-none">github.com/Veliz-P</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-5">
+                                <a href="mailto:paucarcarlos2108@gmail.com" class="btn btn-contact py-2 px-4">
+                                    Enviar mensaje
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
         </section>
     </div>
 
-    <section id="about" class="mt-5 container-fluid seccion-about animate-on-scroll">
-        <div class="row justify-content-around text-center">
-            <div class="col-12">
-                <h4 class="mt-3">Acerca de mi</h4>
-            </div>
-            <div class="col-10 col-md-2 mt-4 d-flex flex-column align-items-start 
-                        d-md-flex align-items-md-center">
-                <h5>Valores</h5>
-                <ul class="d-flex flex-column align-items-start list-unstyled">
-                    <li>⭕​​ Respeto</li>
-                    <li>⭕​​ Honestidad</li>
-                    <li>⭕​​ Trabajo en equipo</li>
-                    <li>⭕ ​Comunicación</li>
-                    <li>⭕​ Solidaridad</li>
-                    <li>⭕​ Disciplina</li>
-                </ul>
-            </div>
-            <div class="col-10 col-md-4 mt-4">
-                <h5>Educación</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <b>- Tecnólogo Superior en Desarrollo de Software</b>
-                        <p>Instituto Tecnológico Universitario “Rumiñahui” (2023-202x)</p>
-                    </li>
-                    <li>
-                        <b>- Aprendizaje Autodirigido</b>
-                        <p>Habilidades construidas a base de proyectos personales, documentación y cursos.</p>
-                    </li>
-                    <li>
-                        <b>- Inglés Nivel B2</b>
-                        <p>Instituto Tecnológico Universitario “Rumiñahui” (2023-202x)</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-10 col-md-4 mt-4 d-flex flex-column align-items-end 
-                        d-md-flex align-items-md-center">
-                <h5>Aspectos personales</h5>
-                <p>Soy de Ecuador y actualmente tengo 19 años, llevo 3 años en el mundo de la programación y
-                    en todo el tiempo que he estudiado he aprendido que para crear software de
-                    calidad es importante la comunicación constante, la implementación
-                    de buenas prácticas de programación y una planificación adecuada de proyectos basándose
-                    en metodologías de desarrollo ágiles que permitan representar de manera precisa los
-                    requisitos de los clientes. <br> <br>
-                    Cuando no estoy programando suelo aplicar el mantenimiento de mis dispositivos personales,
-                    cocinar, practicar deportes y repasar apuntes.<br><br>
-                    Como programador suelo preferir el trabajo remoto pero estoy dispuesto a trabajar de manera
-                    presencial si se requiere.
-            </div>
-        </div>
-    </section>
-
     <footer class="mt-5">
-        <p class="text-center">© 2024 Carlos Paucar Veliz - Todos los derechos reservados</p>
+        <p class="text-center">© 2025 Carlos Paucar Veliz - 
+            <a href="https://icons8.com/" target="_blank">Iconos por Icons8</a>
+        </p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -243,6 +609,56 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script src="{% static 'app/js/index.js' %}"></script>
+    <!-- <script src="{% static 'app/js/index.js' %}"></script> -->
+    <script>
+        function setupScrollAnimations(options = {}) {
+            const {
+                selector = '.animate-on-scroll',
+                threshold = 0.6,
+                visibleClass = 'visible',
+                animateOnce = true
+            } = options;
+            function animateElement(element) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add(visibleClass);
+                            if (animateOnce) {
+                                observer.unobserve(entry.target);
+                            }
+                        } else if (!animateOnce) {
+                            entry.target.classList.remove(visibleClass);
+                        }
+                    });
+                }, { threshold });
+                observer.observe(element);
+            }
+            document.addEventListener("DOMContentLoaded", function () {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(animateElement);
+            });
+        }
+        setupScrollAnimations({
+            selector: '#habilidades',
+            threshold: 0.15,
+            animateOnce: false
+        });
+        setupScrollAnimations({
+            selector: '#proyectos',
+            threshold: 0.15,
+            animateOnce: false
+        });
+        setupScrollAnimations({
+            selector: '#about',
+            threshold: 0.15,
+            animateOnce: false
+        });
+        setupScrollAnimations({
+            selector: '#contacto',
+            threshold: 0.15,
+            animateOnce: false
+        });
+    </script>
 </body>
+
 </html>

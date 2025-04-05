@@ -30,13 +30,16 @@ function setupScrollAnimations(options = {}) {
 // Uso básico (puedes configurar esto según tus necesidades)
 setupScrollAnimations({
     selector: '.habilidades-contacto',
-    threshold: 0.6
+    threshold: 0.4,
+    animateOnce: false
 });
 setupScrollAnimations({
     selector: '.seccion-proyectos',
-    threshold: 0.4
+    threshold: 0.4,
+    animateOnce: false
 });
 setupScrollAnimations({
     selector: '.seccion-about',
-    threshold: 0.3
+    threshold: 0.3,
+    animateOnce: false
 });

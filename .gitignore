@@ -10,3 +10,5 @@ db.sqlite3
 
 # Archivos de entorno
 .env
+produconfig.py
+dvlp.config.py
