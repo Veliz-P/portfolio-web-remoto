@@ -1,16 +1,20 @@
 body {
-    background-color: #1A1A2E;
+    background-color: #210F37;
     color: #DBE4EE;
     font-family: 'Poppins', 'SEGOE UI', 'LUCIDA SANS';
     font-size: 1rem;
 }
 
 .navbar {
-    background-color: #0f3460;
+    opacity: 0.7;
+    box-shadow: 0 0 100px #D70654;
 }
 
 .nav-links li {
     margin-right: 1%;
+}
+.navbar:hover{
+    opacity: 1;
 }
 
 a {
@@ -19,15 +23,16 @@ a {
 }
 
 a:hover {
-    color: lightgreen;
+    color: ghostwhite;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* Clase base para elementos que se animarán al scroll */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 /* Clase que se añade cuando el elemento es visible */
@@ -37,21 +42,32 @@ a:hover {
 }
 
 footer {
-    background-color: #2D4059;
+    background-color: #584a85;
+    opacity: 0.7;
     padding: 10px;
     text-align: center;
-    margin-top: 20px;
     color: white;
 }
 
 #habilidades ul li {
     text-align: center;
-    background-color: #80CBC4;
-    color: black;
+    background-color: #8a4075;
+    color: white;
     font-weight: 500;
     padding: 10px 20px;
     margin: 10px 0;
-    border-radius: 20px;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+
+#habilidades :hover {
+    transition: opacity ease-in-out 0.3s;
+
+    opacity: 1.5;
+}
+
+#habilidades ul li:hover {
+    box-shadow: 0 0 25px #D70654;
 }
 
 /* Para pantallas pequeñas (dispositivos móviles) */
@@ -63,6 +79,10 @@ footer {
     main img {
         width: 60%;
     }
+
+    .cavamym-card {
+        opacity: 1;
+    }
 }
 
 /* Para pantallas medianas (tabletas) */
@@ -70,66 +90,144 @@ footer {
     body {
         font-size: 1.1rem;
     }
+
+    .cavamym-card {
+        opacity: 1;
+    }
 }
 
 #proyectos .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #F0F0F0;
     background-color: #313456;
     width: 18rem;
+    transition: transform 0.3s ease;
 }
 
 #proyectos .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 20px rgb(154, 154, 255);
+    transform: scale(1.03);
+    opacity: 1;
 }
 
-#habilidades,
+/* #habilidades, 
 #contacto {
     background-color: #263962;
     padding: 1%;
     border-radius: 5px;
     box-shadow: 0px 0px 15px rgb(242, 237, 237);
-}
-
+} */
 main img {
     padding: 3%;
     border-radius: 40px;
 }
 
-.dynamic-list .icon {
-    display: none;
-    padding: 3%;
-}
-
-.dynamic-list .txt:hover {
-    display: none;
-}
-
-.dynamic-list .txt:hover+.icon {
-    display: inline;
-}
-
-.dynamic-list img {
-    width: 100%;
-}
-
-.dynamic-list li {
-    cursor: text;
-}
-
+/*
 .seccion-about {
     background-color: #263962;
     border-radius: 20px;
 }
+*/
 
-.seccion-proyectos{
+.seccion-proyectos {
     margin-bottom: 10vh;
 }
 
 .cavamym-card img {
-    width: 30%;
+    width: 13%;
     background-color: #a5abed;
-    padding: 2%;
-    border-radius: 5px
+    padding: 1%;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.cavamym-card {
+    opacity: 0.9;
+}
+
+.btn-proyecto {
+    background-color: #D91656;
+    font-weight: 500;
+    box-shadow: 0px 0px 15px rgb(219, 91, 91);
+}
+
+.hero-section a:hover {
+    transform: scale(1.07);
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-section span {
+    font-weight: 600;
+}
+
+.hero-section {
+    margin-top: 5%;
+    margin-bottom: 11%;
+}
+
+#habilidades img {
+    width: 55%;
+}
+
+#habilidades {
+    box-shadow: 0 0 50px #8a4075;
+    border-radius: 20px;
+}
+
+#proyectos {
+    box-shadow: 0 0 50px #6856f0;
+    border-radius: 20px;
+}
+
+#about {
+    box-shadow: 0 0 50px #019b96;
+    border-radius: 20px;
+}
+
+.neon {
+    text-shadow:
+        0 0 5px rgba(120, 106, 194, 0.3),
+        0 0 10px rgba(120, 106, 194, 0.2),
+        0 0 15px rgba(120, 106, 194, 0.1),
+        0 0 20px rgba(120, 106, 194, 0.05);
+}
+
+h5 {
+    font-weight: bold;
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+    background-color: #210F37;
+    padding: 60px 0;
+    
+}
+
+.contact-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.contact-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #4F959D;
+    transform: translateX(7px);
+}
+
+.contact-text a {
+    color: #63b6c0;
+    transition: color 0.3s ease;
+}
+.contact-text a:hover {
+    color: #DBE4EE;
+    text-decoration: none;
+}
+.btn-contact {
+    background-color: #4F959D;
+    color: white;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+.btn-contact:hover {
+    transform: translateY(-8px);
 }
