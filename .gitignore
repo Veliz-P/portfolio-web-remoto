@@ -1,14 +1,9 @@
-# Archivos Python compilados
 __pycache__/
 *.py[cod]
-
-# Entorno virtual
+project/__pycache__/
+app/project/__pycache__/
 venv/
-
-# Base de datos SQLite (local)
 db.sqlite3
-
-# Archivos de entorno
 .env
 produconfig.py
 dvlp.config.py
