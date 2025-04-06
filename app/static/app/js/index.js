@@ -5,7 +5,6 @@ function setupScrollAnimations(options = {}) {
         visibleClass = 'visible',
         animateOnce = true
     } = options;
-    // Función para animar elementos individuales
     function animateElement(element) {
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -21,22 +20,28 @@ function setupScrollAnimations(options = {}) {
         }, { threshold });
         observer.observe(element);
     }
-    // Configurar animaciones cuando el DOM esté listo
     document.addEventListener("DOMContentLoaded", function () {
         const elements = document.querySelectorAll(selector);
         elements.forEach(animateElement);
     });
 }
-// Uso básico (puedes configurar esto según tus necesidades)
 setupScrollAnimations({
-    selector: '.habilidades-contacto',
-    threshold: 0.6
+    selector: '#habilidades',
+    threshold: 0.15,
+    animateOnce: false
 });
 setupScrollAnimations({
-    selector: '.seccion-proyectos',
-    threshold: 0.4
+    selector: '#proyectos',
+    threshold: 0.15,
+    animateOnce: false
 });
 setupScrollAnimations({
-    selector: '.seccion-about',
-    threshold: 0.3
+    selector: '#about',
+    threshold: 0.15,
+    animateOnce: false
+});
+setupScrollAnimations({
+    selector: '#contacto',
+    threshold: 0.15,
+    animateOnce: false
 });
