@@ -5,12 +5,31 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app'] 
-ALLOWED_HOSTS = ['velizportfolio.up.railway.app']
+CSRF_TRUSTED_ORIGINS = [
+    'https://velizportfolio.up.railway.app',
+    'https://*.railway.app'] 
+ALLOWED_HOSTS = [
+    'velizportfolio.up.railway.app',
+    'localhost',
+    '127.0.0.1']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,9 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
 ]
-
-if DEBUG:
-    INSTALLED_APPS += ['sslserver']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,10 +73,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
