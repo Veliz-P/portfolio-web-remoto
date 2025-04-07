@@ -20,8 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'sslserver',
 ]
+
+if DEBUG:
+    INSTALLED_APPS += ['sslserver']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
